@@ -1,10 +1,12 @@
+import 'package:ctseproject/screens/diseases/lungs_diseases/lungs_diseases_view.dart';
+import 'package:ctseproject/screens/diseases/skin_diseases/add_new_skin_disease.dart';
 import 'package:flutter/material.dart';
 
 import '../../../constants.dart';
 import '../../diseases/eye_diseases/eye_diseases_list.dart';
 import '../../diseases/lungs_diseases/lungs_diseases_list.dart';
 import '../../diseases/muscle_diseases/muscle_diseases_list.dart';
-import '../../diseases/skin_diseases/skin_diseses_list.dart';
+import '../../diseases/skin_diseases/skin_diseases_list.dart';
 
 class RecomendingDiseases extends StatelessWidget {
   const RecomendingDiseases({
@@ -21,12 +23,9 @@ class RecomendingDiseases extends StatelessWidget {
             image: "assets/images/skin.jpeg",
             title: "Skin",
             press: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => SkinDiseases()
-                  )
-              );
+
+              Navigator.of(context).pushNamed(SkinDiseaseList.routeName);
+
             },
           ),
           RecomendDiseases(
@@ -36,7 +35,7 @@ class RecomendingDiseases extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => LungsDiseases()
+                      builder: (context) => LungsDiseasesView()
                   )
               );
             },
@@ -60,7 +59,7 @@ class RecomendingDiseases extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => EyeDiseasesList()
+                      builder: (context) => EyeDiseases()
                   )
               );
             },

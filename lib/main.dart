@@ -1,4 +1,7 @@
 import 'package:ctseproject/constants.dart';
+import 'package:ctseproject/screens/diseases/lungs_diseases/lungs_diseases_list.dart';
+import 'package:ctseproject/screens/diseases/skin_diseases/add_new_skin_disease.dart';
+import 'package:ctseproject/screens/diseases/skin_diseases/skin_diseases_list.dart';
 import 'package:ctseproject/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -31,13 +34,20 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Disease CURE',
       theme: ThemeData(
         scaffoldBackgroundColor: kBackgroundColor,
         primaryColor: kPrimaryColor,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const Homescreen(),
+      initialRoute: Homescreen.routeName,
+      routes: {
+        Homescreen.routeName: (context)=> const Homescreen(),
+        SkinDiseaseList.routeName: (context) => const SkinDiseaseList(),
+        AddNewSkinDisease.routeName: (context) => const AddNewSkinDisease(),
+
+      },
     );
   }
 }
